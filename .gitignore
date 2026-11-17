@@ -1,0 +1,16 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Archivos compilados
+*.class
+out/
+target/
+build/
+
+# Tomcat
+.smarttomcat/
+
+# Credenciales locales
+.env
+.env.*

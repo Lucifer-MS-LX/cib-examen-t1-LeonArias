@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" version="6.0">
+    <display-name>Proyectos de Inversión Pública</display-name>
+    <servlet>
+        <servlet-name>ProyectoServlet</servlet-name>
+        <servlet-class>servlet.ProyectoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProyectoServlet</servlet-name>
+        <url-pattern>/ProyectoServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
