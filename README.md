@@ -4,7 +4,8 @@ Ejercicio Java Web con JSP, Servlets, Bootstrap y MySQL para registrar y listar 
 
 ## Requisitos
 
-- Java 21 o posterior, IntelliJ IDEA y Tomcat 10.1.
+- Java 21 o posterior y Tomcat 10.1.
+- IntelliJ IDEA con Smart Tomcat, o Eclipse IDE for Enterprise Java and Web Developers.
 - MySQL local en `localhost:3306`.
 - El driver MySQL Connector/J 8.4.0 ya está en `WEB-INF/lib`.
 
@@ -31,3 +32,15 @@ La contraseña de demostración está en database.sql y ConexionMySQL.java. No s
 5. Inicia Tomcat con esa configuración y abre `http://localhost:8080/proyectos/ProyectoServlet` en el navegador.
 
 Si cambias archivos `.java`, repite la compilación y reinicia la aplicación. El formulario registra por POST; el botón **Listar** y la redirección después del registro abren el GET del Servlet.
+
+## Abrir y ejecutar en Eclipse
+
+Esta carpeta no incluye los metadatos `.project` y `.classpath` de Eclipse. Para ejecutarla sin depender de IntelliJ:
+
+1. En Eclipse, crea un **Dynamic Web Project** llamado `proyectos`, con Java 21 o posterior y Tomcat 10.1 como **Target runtime**. Usa `proyectos` como **Context root** y las carpetas estándar `src` y `WebContent`.
+2. Copia `proyectos.jsp` a la raíz de `WebContent`.
+3. Copia `WEB-INF/web.xml` a `WebContent/WEB-INF/web.xml` y el JAR de `WEB-INF/lib` a `WebContent/WEB-INF/lib`.
+4. Copia los tres fuentes Java de `WEB-INF/classes/conexion`, `WEB-INF/classes/entidades` y `WEB-INF/classes/servlet` a las mismas carpetas de paquetes dentro de `src`. Eclipse los compilará en `WebContent/WEB-INF/classes`.
+5. Haz clic derecho en el proyecto y selecciona **Run As > Run on Server** con Tomcat 10.1. Abre `http://localhost:8080/proyectos/ProyectoServlet` (ajusta el puerto si tu Tomcat usa otro).
+
+Ejecuta primero `database.sql` en MySQL Workbench, igual que para IntelliJ. Entra por `/ProyectoServlet` para cargar el listado desde MySQL.
